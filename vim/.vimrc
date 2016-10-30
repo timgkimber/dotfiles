@@ -21,6 +21,7 @@ set nocompatible
 filetype indent plugin on
  
 " Enable syntax highlighting
+colo desert
 syntax on
  
  
