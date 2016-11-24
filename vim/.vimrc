@@ -21,6 +21,7 @@ set nocompatible
 filetype indent plugin on
  
 " Enable syntax highlighting
+colo slate
 syntax on
  
  
@@ -156,7 +157,10 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" Highlight characters beyoned column 80
+" Highlight column 80
 highlight ColorColumn ctermbg=brown guibg=#2c2d27
 " let &colorcolumn=join(range(81,999),",")
 set cc=81
+
+" Use Prolog highlighting for .pl files
+let g:filetype_pl="prolog"
