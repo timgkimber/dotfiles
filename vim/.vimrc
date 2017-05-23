@@ -164,3 +164,6 @@ set cc=81
 
 " Use Prolog highlighting for .pl files
 let g:filetype_pl="prolog"
+
+" Turn off line wrapping
+set nowrap
