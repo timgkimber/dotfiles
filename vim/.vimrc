@@ -4,7 +4,57 @@
 "              newbie, basing your first .vimrc on this file is a good choice.
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
- 
+"------------------------------------------------------------
+" Vundle section
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+"
+Plugin 'ap/vim-buftabline'    " Use buffers as tabs
+Plugin 'tpope/vim-rails'      " Rails plugin
+Plugin 'tomtom/tcomment_vim'  " comment toggling (just Ruby?)
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
 "------------------------------------------------------------
 " Features {{{1
 "
@@ -13,12 +63,12 @@
  
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
+" set nocompatible
  
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
-filetype indent plugin on
+" filetype indent plugin on
  
 " Enable syntax highlighting
 colo slate
@@ -156,7 +206,17 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
+"-------------------------------------------------------------
+" Config for buftabline
+let g:buftabline_numbers=1     "1: buffer number, 2:ordinal
+let g:buftabline_indicators=1  "indicate if buffer is modified
+
+"-------------------------------------------------------------
+" Other things I have picked up
+"
 " Highlight column 80
 highlight ColorColumn ctermbg=brown guibg=#2c2d27
 " let &colorcolumn=join(range(81,999),",")
@@ -170,32 +230,32 @@ set nowrap
 
 " Script to set up tab labels with tab number, buffer name, number of windows
 " Copied from http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line
-if exists("+showtabline")
-  function MyTabLine()
-    let s = ''
-    let t = tabpagenr()
-    let i = 1
-    while i <= tabpagenr('$')
-      let buflist = tabpagebuflist(i)
-      let winnr = tabpagewinnr(i)
-      let s .= '%' . i . 'T'
-      let s .= (i == t ? '%1*' : '%2*')
-      let s .= ' '
-      let s .= i . ':'
-      let s .= '%*'
-      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-      let file = bufname(buflist[winnr - 1])
-      let file = fnamemodify(file, ':p:t')
-      if file == ''
-        let file = '[No Name]'
-      endif
-      let s .= file
-      let i = i + 1
-    endwhile
-    let s .= '%T%#TabLineFill#%='
-    let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
-    return s
-  endfunction
-  set stal=2
-  set tabline=%!MyTabLine()
-endif
+" if exists("+showtabline")
+"   function MyTabLine()
+"     let s = ''
+"     let t = tabpagenr()
+"     let i = 1
+"     while i <= tabpagenr('$')
+"       let buflist = tabpagebuflist(i)
+"       let winnr = tabpagewinnr(i)
+"       let s .= '%' . i . 'T'
+"       let s .= (i == t ? '%1*' : '%2*')
+"       let s .= ' '
+"       let s .= i . ':'
+"       let s .= '%*'
+"       let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+"       let file = bufname(buflist[winnr - 1])
+"       let file = fnamemodify(file, ':p:t')
+"       if file == ''
+"         let file = '[No Name]'
+"       endif
+"       let s .= file
+"       let i = i + 1
+"     endwhile
+"     let s .= '%T%#TabLineFill#%='
+"     let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
+"     return s
+"   endfunction
+"   set stal=2
+"   set tabline=%!MyTabLine()
+" endif
