@@ -17,3 +17,11 @@ EXTRA_DIR="$HOME/.extra"
 # Bunch of symlinks
 
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
+
+############# Vim stuff
+
+# make sure vundle is installed
+VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
+
+[ -d "$VUNDLE_DIR.git" ] || git clone https://github.com/VundleVim/Vundle.vim.git \
+  $VUNDLE_DIR
