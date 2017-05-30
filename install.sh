@@ -23,5 +23,5 @@ ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
 # make sure vundle is installed
 VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
 
-[ -d "$VUNDLE_DIR.git" ] || git clone https://github.com/VundleVim/Vundle.vim.git \
+[ -d "$VUNDLE_DIR/.git" ] || git clone https://github.com/VundleVim/Vundle.vim.git \
   $VUNDLE_DIR
