@@ -11,13 +11,20 @@ EXTRA_DIR="$HOME/.extra"
 
 # Update dotfiles itself first
 
-[ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" \
-  --git-dir="$DOTFILES_DIR/.git" pull origin master
+# [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" \
+#   --git-dir="$DOTFILES_DIR/.git" pull origin master
 
 # Bunch of symlinks
 
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
-ln -sfv "$DOTFILES_DIR/tmux/.tmux.conf" ~
+
+# Need to select tmux conf according to version
+str=`tmux -V`
+tmux_version=${str#"tmux "}
+case $tmux_version in
+  1.6) ln -sfv "$DOTFILES_DIR/tmux/1.6/.tmux.conf" ~;;
+  *) ln -sfv "$DOTFILES_DIR/tmux/1.6/.tmux.conf" ~;;
+esac
 
 ############# Vim stuff
 
