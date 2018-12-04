@@ -212,6 +212,7 @@ nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 " Map \m to save and make
 nnoremap <leader>m :w \| :make<CR>
+nnoremap <leader>a :w \| :make all<CR>
 
 "-------------------------------------------------------------
 " Config for buftabline

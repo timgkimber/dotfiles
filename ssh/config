@@ -3,7 +3,7 @@ Host shell4
   User tk106
 
 Host mars-ci
-  HostName 146.169.46.160
+  HostName 146.169.46.204
   User tk106
 
 Host mars-dev
