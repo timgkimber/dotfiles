@@ -72,7 +72,7 @@ filetype plugin indent on    " required
 " filetype indent plugin on
  
 " Enable syntax highlighting
-colo slate
+colo evening
 syntax on
  
  
