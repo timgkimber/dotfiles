@@ -17,7 +17,15 @@ EXTRA_DIR="$HOME/.extra"
 # Bunch of symlinks
 
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
-ln -sfv "$DOTFILES_DIR/tmux/.tmux.conf" ~
+ln -sfv "$DOTFILES_DIR/ssh/config" ~/.ssh
+
+# Need to select tmux conf according to version
+str=`tmux -V`
+tmux_version=${str#"tmux "}
+case $tmux_version in
+  1.6) ln -sfv "$DOTFILES_DIR/tmux/1.6/.tmux.conf" ~;;
+  *) ln -sfv "$DOTFILES_DIR/tmux/1.6/.tmux.conf" ~;;
+esac
 
 ############# Vim stuff
 

@@ -72,7 +72,7 @@ filetype plugin indent on    " required
 " filetype indent plugin on
  
 " Enable syntax highlighting
-colo slate
+colo evening
 syntax on
  
  
@@ -207,8 +207,12 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+" Map C-N and C-P to move to next and previous buffer
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+" Map \m to save and make
+nnoremap <leader>m :w \| :make<CR>
+nnoremap <leader>a :w \| :make all<CR>
 
 "-------------------------------------------------------------
 " Config for buftabline
