@@ -13,3 +13,4 @@ alias coldiruid='ldapsearch -h addressbook.imperial.ac.uk -x -b "o=Imperial Coll
 alias hf='history | grep $1'
 alias tsph='tmux splitw -h -c $PWD'
 alias tspv='tmux splitw -v -c $PWD'
+alias up_disp='export DISPLAY=:0'
