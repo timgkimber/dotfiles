@@ -3,7 +3,7 @@ Host shell4
   User tk106
 
 Host mars-ci
-  HostName 146.169.46.160
+  HostName 146.169.46.204
   User tk106
 
 Host mars-dev
@@ -16,5 +16,9 @@ Host labts01
 
 Host labts02
   HostName 146.169.47.155
+  User tk106
+
+Host marzz
+  HostName marzz.doc.ic.ac.uk
   User tk106
 
