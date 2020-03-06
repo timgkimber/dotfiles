@@ -2,11 +2,19 @@ Host shell4
   HostName shell4.doc.ic.ac.uk
   User tk106
 
+Host mars-dev
+  HostName 146.169.40.135
+  User tk106
+
 Host mars-ci
+  HostName 146.169.40.134
+  User tk106
+
+Host mars-ci-old
   HostName 146.169.46.204
   User tk106
 
-Host mars-dev
+Host mars-dev-old
   HostName 146.169.47.54
   User tk106
 

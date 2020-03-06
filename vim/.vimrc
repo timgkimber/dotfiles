@@ -233,6 +233,12 @@ let g:filetype_pl="prolog"
 " Turn off line wrapping
 set nowrap
 
+" Enable folding
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "do not fold by default
+set foldlevel=1         "open one level of folds by default
+
 " pane navigation
 let g:tmux_navigator_no_mappings=1
 
