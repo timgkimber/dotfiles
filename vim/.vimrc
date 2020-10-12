@@ -40,6 +40,7 @@ Plugin 'ap/vim-buftabline'    " Use buffers as tabs
 Plugin 'tpope/vim-rails'      " Rails plugin
 Plugin 'tomtom/tcomment_vim'  " comment toggling (just Ruby?)
 Plugin 'christoomey/vim-tmux-navigator' " integrate vim and tmux
+Plugin 'rkaminsk/vim-syntax-clingo' " syntax highlighting for asp files
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

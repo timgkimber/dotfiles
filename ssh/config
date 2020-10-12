@@ -2,20 +2,14 @@ Host shell4
   HostName shell4.doc.ic.ac.uk
   User tk106
 
+# The following machines are not public. You need to be on the Imperial network
+# to access them (or go via the shell server above).
 Host mars-dev
   HostName 146.169.40.135
   User tk106
 
-Host mars-ci
-  HostName 146.169.40.134
-  User tk106
-
-Host mars-ci-old
-  HostName 146.169.46.204
-  User tk106
-
-Host mars-dev-old
-  HostName 146.169.47.54
+Host mars-ci-1804
+  HostName 146.169.40.132
   User tk106
 
 Host labts01
@@ -29,4 +23,8 @@ Host labts02
 Host marzz
   HostName marzz.doc.ic.ac.uk
   User tk106
+
+Host newmarzz
+  HostName vm-msc-adm2.doc.ic.ac.uk
+  User msc_admissions
 
