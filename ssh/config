@@ -4,6 +4,10 @@ Host shell4
 
 # The following machines are not public. You need to be on the Imperial network
 # to access them (or go via the shell server above).
+Host exams
+  HostName cng01.doc.ic.ac.uk
+  User tk106
+
 Host mars-dev
   HostName 146.169.40.135
   User tk106
