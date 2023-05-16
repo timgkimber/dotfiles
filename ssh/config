@@ -2,8 +2,17 @@ Host shell4
   HostName shell4.doc.ic.ac.uk
   User tk106
 
+Host cleardata
+  HostName files.ftp.cleardatagroup.uk
+  User 1269202ImperialCollegeLondonComputerDeptExamPapers
+  Port 220
+
 # The following machines are not public. You need to be on the Imperial network
 # to access them (or go via the shell server above).
+Host examhub
+  HostName cloud-vm-42-29.doc.ic.ac.uk
+  User examhub
+
 Host exams
   HostName cng01.doc.ic.ac.uk
   User tk106
